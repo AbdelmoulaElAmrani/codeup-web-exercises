@@ -2,3 +2,41 @@
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+h1 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+h1, h2 {
+    text-decoration: underline;
+}
+
+* {
+    background-color: transparent;
+    font-family: 'Slabo 27px', serif;
+
+}
+.imgBackground {
+    background-image: url("../img/abstract-background.jpg");
+    color: white;
+}
+ul {
+    list-style: square inside;
+}
+table, th, td {
+    border: 1px solid black;
+}table {
+     width: 100%;
+    background-color: #9EFFE8;
+ }
+
+th {
+    height: 50px;
+    background-color: #3DFFD1;
+}
+a:hover {
+    background-color: gold;
+    padding: 14px 25px;
+
+}
