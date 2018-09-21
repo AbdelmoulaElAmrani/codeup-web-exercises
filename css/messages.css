@@ -1,0 +1,46 @@
+body, html {
+    height: 100%;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+.message-info{
+    background-color: rgb(204 223 252) ;
+    color: rgb(110	113	181	);
+
+}
+
+.message-success {
+    background-color: rgb(205 243 220);
+    color: rgb(47 131 89);
+}
+
+.message-warning{
+    background-color:rgb(252	250	206	) ;
+    color:rgb(171	155	90	) ;
+}
+
+.message-error{
+    background-color: rgb(252	211	215	) ;
+    color: rgb(141	34	61	) ;
+}
+
+.message {
+    opacity: .7;
+    margin: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border:.5px black solid;
+    border-radius: 4px;
+    border-style: ridge;
+}
+.message:hover{
+    opacity: 1;
+}
+img {
+    height: 15px;
+    float: right;
+
+}
