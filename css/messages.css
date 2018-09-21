@@ -17,12 +17,12 @@ body, html {
 }
 
 .message-warning{
-    background-color:rgb(252	250	206	) ;
+    background-color:rgb(252 250	206	) ;
     color:rgb(171	155	90	) ;
 }
 
 .message-error{
-    background-color: rgb(252	211	215	) ;
+    background-color: rgb(252 211	215	) ;
     color: rgb(141	34	61	) ;
 }
 
@@ -36,11 +36,19 @@ body, html {
     border-radius: 4px;
     border-style: ridge;
 }
+.message:before {
+    font-family: FontAwesome;
+    content:"\f07a";
+    position: absolute;
+    top: 11px;
+    left: -30px;
+    transition: all 200ms ease;
+}
 .message:hover{
     opacity: 1;
 }
 img {
     height: 15px;
     float: right;
-
+    left: 7px;
 }
