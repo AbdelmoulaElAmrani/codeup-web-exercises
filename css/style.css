@@ -5,11 +5,11 @@
 h1 {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
     padding: 10px;
 }
 h1, h2 {
     text-decoration: underline;
+
 }
 
 * {
@@ -18,8 +18,10 @@ h1, h2 {
 
 }
 .imgBackground {
-    background-image: url("../img/abstract-background.jpg");
+    background-image: url("../img/img2.jpg");
+    height: 150px;
     color: white;
+    background-repeat: no-repeat;
 }
 ul {
     list-style: square inside;

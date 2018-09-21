@@ -1,0 +1,42 @@
+body{
+    background-color: #CDF3B3;
+}
+form {
+
+}
+
+.width-80{
+    background-color: white;
+    margin:5em 8em ;
+    padding: 1em;
+    font-family: "Gill Sans", sans-serif  ;
+    font-size: 20px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+    border-width: 0;
+}
+.form-group{
+    height: 65px;
+}
+.form-control {
+    width: 100%;
+    padding: 15px 0 0 0 ;
+    margin: 6px 0;
+    border-style: groove;
+    border-width: 1px;
+    box-sizing: border-box;
+}
+.form-label{
+    font-weight: bold;
+}
+.btn-block {
+    background-color: #649348;
+    width: 100%;
+    padding: 15px ;
+    margin: 6px 0;
+    color: white;
+    font-family:"Gill Sans", sans-serif;
+    font-size: 20px;
+}
+button:hover{
+    background-color: #6a936f;
+}
