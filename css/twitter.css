@@ -86,9 +86,10 @@ a {
     top: 200px;
 }
 .profile-details , .who-to-follow , .timeline {
-    width:calc(25% 50% 25%  -.5em );
+    width:calc(50%  -.5em );
     margin:0 .5em 0 .5em;
     float:left;
+
 }
 .container {
     margin-top: 2em;
@@ -103,7 +104,7 @@ a {
 .media-image {
     max-width: 50px;
     float: left;
-    margin: 1.33em;
+    margin-top: 1.33em;
 }
 .media-body {
     float: left;
