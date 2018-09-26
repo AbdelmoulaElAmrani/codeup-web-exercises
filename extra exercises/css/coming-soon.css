@@ -1,0 +1,35 @@
+
+body {
+    font-family: Raleway, sans-serif;
+    color: white;
+    background-image: url("../img/forest.jpg");
+    background-size: cover;
+}
+.logoBox>p{
+    font-size: small;
+}
+main{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+main>h1{
+    padding-top: 20%;
+    font-weight: lighter;
+    font-size: 3em;
+}
+
+main>p{
+    position: relative;
+    left: 44%;
+    padding-top: 20px;
+    border-top: solid white 1px;
+    width: 150px;
+    opacity: .5;
+}
+footer{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    opacity: .5;
+}
