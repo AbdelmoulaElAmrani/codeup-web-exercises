@@ -1,0 +1,17 @@
+li{
+    list-style: none;
+    display: inline;
+    float: left;
+}
+.order{
+    background: rgba(176, 176, 176, 1);
+}
+
+li , form {
+    padding: 30px;
+    background: #E6ECF0;
+}
+.searchBtn{
+    height:px ;
+
+}

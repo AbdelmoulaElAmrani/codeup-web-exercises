@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Order pizza online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -39,7 +40,7 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Stores Near You</button>
+                        <button class="btn btn-outline-secondary" type="submit">Search Stores Near You</button>
                     </form>
                     <nav class="navbar navbar-light bg-light">
                         <form class="form-inline">
@@ -55,10 +56,9 @@
             </nav>
         </div>
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
+        <div class="jumbotron jumbotron-fluid d-none d-md-block">
                 <h1 class="display-4">Welcome To Pizza World</h1>
-            </div>
+
         </div>
         <h2>Build your own pizza!</h2>
 
@@ -66,22 +66,22 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#vig" role="tab" data-toggle="tab">vegiiis</a>
+                <a class="nav-link active" href="#vig" role="tab" data-toggle="tab">vegiiis  <span class="badge badge-secondary"> 4</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#size" role="tab" data-toggle="tab">Size and crust</a>
+                <a class="nav-link" href="#size" role="tab" data-toggle="tab">Size and crust  <span class="badge badge-secondary"> 5</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#cheese" role="tab" data-toggle="tab">Cheese and sauce</a>
+                <a class="nav-link" href="#cheese" role="tab" data-toggle="tab">Cheese and sauce  <span class="badge badge-secondary"> 4</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#topping" role="tab" data-toggle="tab">Topping</a>
+                <a class="nav-link" href="#topping" role="tab" data-toggle="tab">Topping  <span class="badge badge-secondary"> 4</span></a>
             </li>
         </ul>
 
         <!-- cards-->
-
+    <form action="https://webhook.site/c2baa9ff-5247-4950-b52a-1e9ed45760ad" method="post" >
         <div class="tab-content">
             <!--viggg card-->
 
@@ -102,35 +102,37 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                <label class="form-check-label" for="defaultCheck2">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" >
+                <label class="form-check-label" for="defaultCheck3">
                     onions
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                <label class="form-check-label" for="defaultCheck2">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4" >
+                <label class="form-check-label" for="defaultCheck4">
                     tomatos
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                <label class="form-check-label" for="defaultCheck2">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck5" >
+                <label class="form-check-label" for="defaultCheck5">
                     ect..
                 </label>
             </div>
+            <div class="card-footer">
             <a class="btn btn-primary btnCss" href="#size" role="button">Next</a>
+        </div>
         </div>
             <!--size card-->
 
 
             <div role="tabpanel" class="tab-pane" id="size" style="width: 18rem;">
-            <div class="card-header">
+            <div class="card-header p-3 mb-2 bg-dark text-white">
                Hand Tossted
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Garlic seasoned</li>
-                <li class="list-group-item"><div class="custom-control custom-radio">
+            <ul class="p-3 mb-2 bg-info text-white list-group list-group-flush">
+                <li class="list-group-item p-3 mb-2 bg-dark text-white">Garlic seasoned</li>
+                <li class="list-group-item p-3 mb-2 bg-dark text-white"><div class="custom-control custom-radio">
                     <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                     <label class="custom-control-label" for="customRadio1">Small</label>
                 </div>
@@ -141,12 +143,12 @@
                 </li>
 
             </ul>
-            <div class="card-header">
+            <div class="card-header p-3 mb-2 bg-dark text-white">
                 Crispy thin
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Thin enough</li>
-                <li class="list-group-item"><div class="custom-control custom-radio">
+            <ul class="p-3 mb-2 bg-info text-white list-group list-group-flush">
+                <li class="list-group-item p-3 mb-2 bg-dark text-white">Thin enough</li>
+                <li class="list-group-item p-3 mb-2 bg-dark text-white"><div class="custom-control custom-radio">
                     <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
                     <label class="custom-control-label" for="customRadio3">Small</label>
                 </div>
@@ -166,8 +168,8 @@
             <div class="card-header">
                 Cheese
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">How much?</label>
+            <div class="form-group p-3 mb-2 bg-info text-white">
+                <label class="p-3 mb-2 bg-dark text-white" for="exampleFormControlSelect1">How much?</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>Light</option>
                     <option>Normal</option>
@@ -179,8 +181,8 @@
             <div class="card-header">
                 sauce
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">What type?</label>
+            <div class="form-group p-3 mb-2 bg-info text-white">
+                <label class="p-3 mb-2 bg-dark text-white" for="exampleFormControlSelect1">What type?</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>Tomato sauce</option>
                     <option>Marinara sauce</option>
@@ -191,8 +193,8 @@
 
 
 
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">How much?</label>
+            <div class="form-group p-3 mb-2 bg-info text-white">
+                <label class="p-3 mb-2 bg-dark text-white" for="exampleFormControlSelect1">How much?</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>Light</option>
                     <option>Normal</option>
@@ -207,50 +209,50 @@
 
             <div role="tabpanel" class="tab-pane" id="topping" style="width: 18rem;">
 
-                <div class="card-header">
+                <div class="card-header p-3 mb-2 bg-info text-white">
                     choose you meet
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                <div class="form-check p-3 mb-2 bg-dark text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+                    <label class="form-check-label" for="defaultCheck7">
                         beef
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                    <label class="form-check-label" for="defaultCheck2">
+                <div class="form-check p-3 mb-2 bg-dark text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck8" >
+                    <label class="form-check-label" for="defaultCheck8">
                         ham
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                    <label class="form-check-label" for="defaultCheck2">
+                <div class="form-check p-3 mb-2 bg-dark text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9" >
+                    <label class="form-check-label" for="defaultCheck9">
                         becon
                     </label>
                 </div>
-                <div class="card-header">
+                <div class="card-header p-3 mb-2 bg-info text-white">
                     choose Non-meet
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                <div class="form-check p-3 mb-2 bg-dark text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck22">
+                    <label class="form-check-label" for="defaultCheck22">
                         Green Olives
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                    <label class="form-check-label" for="defaultCheck2">
+                <div class="form-check p-3 mb-2 bg-dark text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck21" >
+                    <label class="form-check-label" for="defaultCheck21">
                         see food
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                    <label class="form-check-label" for="defaultCheck2">
+                <div class="form-check p-3 mb-2 bg-dark text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck23" >
+                    <label class="form-check-label" for="defaultCheck23">
                         ext..
                     </label>
                 </div>
                 <a class="btn btn-primary btnCss" href="#" role="button">checkout</a>
-
+                </form>
         </div>
         </div>
     </div>

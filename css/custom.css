@@ -18,3 +18,6 @@
 .collapse>.navbar {
     margin-left: 70px;
 }
+.form-check-label {
+    margin: 10px;
+}
