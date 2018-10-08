@@ -106,10 +106,9 @@
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 // function applyDiscount( originalPrice , discountPercentage) {
-//     var orginalPrice = 100;
-//     var discountPercentage = 0.2;
+
 //     var output ;
-//     output= orginalPrice * discountPercentage +'%' ;
+//     output= orginalPrice * discountPercentage ;
 //     return output;
 // }
 // console.log(applyDiscount())
@@ -165,9 +164,29 @@
 
 // Write a function called `identity(input)` that takes in an argument called input and returns that input.
 
+// function identity(input) {
+// var input = "Helllo";
+// return input;
+// }
+// console.log(identity())
+
 // Write a function called `getRandomNumber(min, max)` that returns a random number between min and max values sent to that function call.
+//
+// function getRandomNumber(min, max) {
+//     min = 40;
+//     max = 500;
+//     return Math.random() * (max - min) + min;
+// }
+// console.log(getRandomNumber());
 
 // Write a function called `first(input)` that returns the first character in the provided string.
+//
+// function first(input) {
+// var output;
+// output = input.charAt(0);
+// return output;
+// }
+// console.log(first('hohoho'));
 
 // Write a function called `last(input)` that returns the last character of a string
 
@@ -180,7 +199,13 @@
 // Write a function called `count(input)` that takes in a string and returns the number of characters.
 
 // Write a function called `add(a, b)` that returns the sum of a and b
-
+// function add(a , b) {
+//
+//      var output;
+//      output = a + b;
+//      return output;
+// }
+// console.log(add(4 ,4));
 // Write a function called `subtract(a, b)` that return the difference between the two inputs.
 
 // Write `multiply(a, b)` function that returns the product
@@ -190,9 +215,134 @@
 // Write a remainder(number, divisor) function that returns the remainder left over when dividing `number` by the `divisor`
 
 // Write the function `square(a)` that takes in a number and returns the number multiplied by itself.
-
+// function square(a) {
+//     return a * a ;
+// }
+// console.log(square(3));
 // # Super Duper Gold-Star Bonus
 // Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
 
+// function somOfSquares(a , b) {
+//     add()
+//     square()
+// }
+// console.log(somOfSquares(4 ,4));
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 
+//
+// var x = 6 ;
+// var y = 6;
+// var add = x + y;
+// var multiply = x * y;
+// // var operator = add , multiply;
+// function doMath(operator , x , y) {
+//
+//         return operator;
+// }
+// console.log(doMath());
+
+// --------------------------------------
+
+// //Extra Extra Extra bonuses
+// Make a function named isOdd(number)
+//
+// function isOdd(number) {
+//     if (number%2 == 0)
+//         return "not its not";
+//     else
+//         return "yes its odd";
+// }
+
+// Make a function named isEven(number)
+
+// function isOdd(number) {
+//     if (number%2 == 0) {
+//         return "yes its odd";
+//     }else
+//     {    return "not its not";
+// }
+// }
+
+// Make a function named identity(input) that returns the input exactly as provided.
+
+// function identity(input) {
+//
+//     return input ;
+// }
+//
+// console.log(identity("hhhhh"));
+
+//     Make a function named isFive(input)
+// function isFive(input) {
+//     if (input === 5){
+//         return "yes its Five"
+//     }else{
+//         return "not its not five"
+//     }
+// }
+// Make a function named addFive(input) that adds five to some input.
+// function addFive(input) {
+//     return input+5;
+// }
+//     Make a function named isMultipleOfFive(input)
+// function isMultipleOfFive(input) {
+//     if (input%5 == 0) {
+//         return "yes its a multiple of 5";
+//     }else
+//     {    return "not its not";
+// }
+//
+// }
+// Make a function named isThree(input)
+// function isThree(input) {
+//         if (input === 3){
+//             return True;
+//         }else {
+//             return false
+//         }
+// }
+// Make a function named isMultipleOfThree(input)
+// function isMultipleOfThree(input) {
+//     if (input%3 == 0) {
+//         return "yes its a multiple of 3";
+//     }else
+//     {    return "not its not";
+// }
+// }
+// Make a function named isMultipleOfThreeAndFive(input)
+// function isMultipleOfThreeAndFive(input) {
+//     if (input%3 == 0 && input%5 === 0) {
+//         return "yes its a multiple of 3 and 5";
+//     }else
+//     {    return "not its not";
+// }
+// }
+// Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
+// function isMultipleOf(target, n) {
+//         if (target%n ===0){
+//             return true
+//         }else{
+//             return false;
+//         }
+//}
+
+
+
+// 1) Create a function that will return how many whitespace characters are
+// at the beginning and end of a string.
+// function calcWhiteSpaceAtBeginningAndEnd(string) {
+//     var length = string.length;
+//     var trimTheStr = string.trim();
+//     var afterTrim = trimTheStr.length;
+//     var output = length - afterTrim;
+//     return output;
+// }
+//
+// console.log(calcWhiteSpaceAtBeginningAndEnd('  jkhbdvij jsdbld ljbdjl  '));
+//
+// 2) Create a function that takes in two string inputs. If the second string input is present
+// in the first, return the first input string with the second input string removed from it.
+//     If the second string input is present multiple times in the first,
+//     the second string will only be removed where it first occurs in the first string.
+//     If the second string input is not present in the first,
+// return the first string as entered in the function.
