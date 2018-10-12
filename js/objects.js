@@ -54,8 +54,15 @@ var person = {
     ];
 
     shoppers.forEach(  function (shopper) {
-        if (shopper.amount >= 200) {
-            console.log('Hi ' + shopper.name + ',' + 'this is your total amount ' + shopper.amount + ',you are eligible of 12% discount so you going to pay just ' + (shopper.amount - (shopper.amount * 0.12)));
+        if (shopper.amount > 200) {
+            var message = '';
+            message += 'Hi ' + shopper.name + ',' + 'this is your total amount ';
+            message +=   shopper.amount + ',you are eligible of 12% discount so you going to pay just ';
+            message += + (shopper.amount - (shopper.amount * 0.12)
+
+
+            );
+            console.log(message);
         }else {
             console.log('Hi '+shopper.name + 'your total is '+shopper.amount)
         }
@@ -116,13 +123,15 @@ var person = {
                 'last name': 'Walker'
             }
         }
-    ]
+    ];
+
+
     //just test console logging
     // console.log(books[5].author["first name"]);
-    books.forEach(function (value , index , array) {
-        console.log('Book # '+parseFloat(index+1) +'\n'+
-      'Title: '+  books[index].title +'\n'+
-        'author: '+ books[index].author["first name"] + ' ' + books[index].author["last name"]+'\n'+
+    books.forEach(function (book , index , array) {
+        console.log('Book # '+(index+1) +'\n'+
+      'Title: '+  book.title +'\n'+
+        'author: '+ book.author["first name"] + ' ' + book.author["last name"]+'\n'+
        '----')
 
     });
