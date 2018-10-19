@@ -1,10 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+ <title> JavaScript Stop Watch </title>
+  <style text="text/css">
+      html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+      }
+
+      body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center; /* Center the page horizontally */
+          align-items: center; /* Center the page vertically */
+          font-family: 'Lato', sans-serif;
+      }
+      button{
+          width: 100px;
+          height: 35px;
+      }
+      #timer {
+          font-size: 100px;
+          font-weight:300 ;
+      }
+  </style>
 </head>
-<body>
-$END$
+<body id="body">
+<!--<div class="container">-->
+    <!--<h1><p id="output"><b>0:00:00:00</b></p></h1>-->
+    <!--<div id="controls" align="center">-->
+        <!--<button id= "startPause" onclick="startPause()"><b id="start">Start</b></button>-->
+        <!--<button onclick="reset()" id="reset"><b id="reset">Reset</b></button>-->
+    <!--</div>-->
+
+    <h1 id="timer">00 : 00 . 000</h1>-->
+    <div>-->
+        <button onclick="startPause()" id="toggle" id= "startPause">Start</button>-->
+        <button onclick="reset()" id="reset">Reset</button>-->
+    </div>-->
+
+    <script>
+        // var time = 0;
+        // var running = 0;
+        // function startPause(){
+        //     if(running == 0){
+        //         running = 1;
+        //         increment();
+        //         document.getElementById("toggle").innerHTML = "Pause";
+        //     }
+        //     else{
+        //         running = 0;
+        //         document.getElementById("toggle").innerHTML = "Resume";
+        //     }
+        // }
+        // function reset(){
+        //     running = 0;
+        //     time = 0;
+        //     document.getElementById("toggle").innerHTML = "Start";
+        //     document.getElementById("timer").innerHTML = "0:00:00:00";
+        // }
+        // function increment(){
+        //     if(running == 1){
+        //         setTimeout(function(){
+        //             time++;
+        //             var mins = Math.floor(time/10/60);
+        //             var secs = Math.floor(time/10 % 60);
+        //             var hours = Math.floor(time/10/60/60);
+        //             var tenths = time % 10;
+        //             if(mins < 10){
+        //                 mins = "0" + mins;
+        //             }
+        //             if(secs < 10){
+        //                 secs = "0" + secs;
+        //             }
+        //             document.getElementById("timer").innerHTML = hours + ":" + mins + "." + secs + tenths ;
+        //             increment();
+        //             console.log(time)
+        //         },100)
+        //     }
+        // }
+
+//second
+//
+        var timer = document.getElementById('timer');
+        var toggleBtn = document.getElementById('toggle');
+        var resetBtn = document.getElementById('reset');
+
+        var BodyBackgrounColor = document.getElementById('body');
+
+        var watch = new Stopwatch(timer);
+
+        function start() {
+            toggleBtn.textContent = 'Stop';
+            watch.start();
+        }
+
+        function stop() {
+            toggleBtn.textContent = 'Start';
+            watch.stop();
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            watch.isOn ? stop() : start();
+        });
+
+        resetBtn.addEventListener('click', function() {
+            watch.reset();
+        });
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        function Stopwatch(elem) {
+            var time = 0;
+            var offset;
+            var interval;
+
+            function update() {
+                if (this.isOn) {
+                    time += delta();
+
+
+                    // randomColor
+                    // timer.style.color =getRandomColor()
+                    // toggleBtn.style.background =getRandomColor()
+                    // resetBtn.style.background =getRandomColor()
+                    //
+                    // BodyBackgrounColor.style.background = getRandomColor()
+
+                }
+
+                elem.textContent = timeFormatter(time);
+            }
+
+            function delta() {
+                var now = Date.now();
+                var timePassed = now - offset;
+
+                offset = now;
+
+                return timePassed;
+            }
+
+            function timeFormatter(time) {
+                time = new Date(time);
+
+                var minutes = time.getMinutes().toString();
+                var seconds = time.getSeconds().toString();
+                var milliseconds = time.getMilliseconds().toString();
+
+                if (minutes.length < 2) {
+                    minutes = '0' + minutes;
+                }
+
+                if (seconds.length < 2) {
+                    seconds = '0' + seconds;
+                }
+
+                while (milliseconds.length < 3) {
+                    milliseconds = '0' + milliseconds;
+                }
+
+                return minutes + ' : ' + seconds + ' . ' + milliseconds;
+            }
+
+            this.start = function() {
+                interval = setInterval(update.bind(this), 10);
+                offset = Date.now();
+                this.isOn = true;
+            };
+
+            this.stop = function() {
+                clearInterval(interval);
+                interval = null;
+                this.isOn = false;
+            };
+
+            this.reset = function() {
+                time = 0;
+                update();
+            };
+
+            this.isOn = false;
+        }
+
+    </script>
 </body>
 </html>

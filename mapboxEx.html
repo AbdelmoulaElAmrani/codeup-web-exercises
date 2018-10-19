@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-$END$
+
+<div id='map' style='width: 600px; height: 500px;'></div>
+<script>
+    var mapOptions = {
+        // Set the zoom level
+        zoom: 19,
+
+        // This sets the center of the map at our location
+        center: {
+            lat:  29.426791,
+            lng: -98.489602
+        }
+    };
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGlib21vZGVyb2d1ZSIsImEiOiJjam5idzlkOG8wY2Z5M2pucnlwdWZvd2p1In0.GppcK9zmjShUIh63fjsrSg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v10'
+        zoom: 19,
+        center: {
+            lat:  29.426791,
+            lng: -98.489602
+
+    });
+</script>
 </body>
 </html>
