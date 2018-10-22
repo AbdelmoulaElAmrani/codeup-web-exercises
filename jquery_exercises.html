@@ -5,12 +5,31 @@
     <title>Title</title>
 </head>
 <body>
+<div class="codeup" id="main">
+    <h1 class="mainHeader" id="MainHeader">Hi JQUERY</h1>
+    <p class="parag" id="parag"><strong>Introduction</strong> Query is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML.<br>
+        It was released in January 2006 at BarCamp NYC by John Resig.</p>
+    <h2>Topics</h2>
+    <ul id="list" class="list">
+        <li id="item1" class="items">Selectors</li>
+        <li id="item2" class="codeup">Events</li>
+        <li id="item3" class="items">Effects</li>
+        <li id="item4" class="items">Ajax Requests </li>
+        <li id="item5" class="items">Essential Methods</li>
+    </ul>
+
+</div>
 
 <script src="js/jquery-2.2.4.min.js"></script>
 <script>
     'use strict'
     $(document).ready(function () {
-        alert('boom')
+        // var firstItem = $('#item1').html();
+        // var paragraph = $('#parag').html();
+        // alert(paragraph)
+        // $('.codeup').css('border', 'solid red 1px')
+        $('li').css('font-size', '20px')
+
     })
 
 </script>
