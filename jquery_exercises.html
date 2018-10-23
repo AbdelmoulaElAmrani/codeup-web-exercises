@@ -12,7 +12,7 @@
     <h2>Topics</h2>
     <ul id="list" class="list">
         <li id="item1" class="items">Selectors</li>
-        <li id="item2" class="codeup">Events</li>
+        <li id="item2" class="items">Events</li>
         <li id="item3" class="items">Effects</li>
         <li id="item4" class="items">Ajax Requests </li>
         <li id="item5" class="items">Essential Methods</li>
@@ -28,8 +28,18 @@
         // var paragraph = $('#parag').html();
         // alert(paragraph)
         // $('.codeup').css('border', 'solid red 1px')
-        $('li').css('font-size', '20px')
-
+        // $('li').css('font-size', '20px')
+        $('#MainHeader').click(function () {
+            $(this).css('background' , 'red')
+        })
+        $('#parag').dblclick(function () {
+            $(this).css('font-size', '18px')
+        })
+        $('.items').hover(function () {
+            $(this).css('color','blue')
+        },function () {
+            $(this).css('color', defaultStatus)
+        })
     })
 
 </script>

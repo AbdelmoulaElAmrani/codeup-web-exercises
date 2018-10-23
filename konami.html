@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        body {
+            color: #444;
+            font: normal 16px Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        .code {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .code span {
+
+            background: -o-linear-gradient(left,  #cccccc 0%,#eeeeee 50%,#cccccc 100%);
+            box-shadow: 1px 0 0 #efefef inset, -1px 0 0 #efefef inset;
+            border: 1px solid #bbb;
+            border-bottom: 4px solid #aaa;
+            border-radius: 3px;
+            display: inline-block;
+            height: 24px;
+            padding: 5px;
+            margin: 0 1px;
+            text-align: center;
+            text-shadow: 0 1px 0 #fff;
+            width: 24px;
+        }
+        alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+        .lostMsg , .congratMsg{
+            color: #1B87E5;
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+        #secondGif{
+            position: absolute;
+            left: 320px;
+        }
+        #kermitGif{
+            position: absolute;
+            top: 145px;
+            height: 273px;
+        }
+        #smithGif{
+            position: absolute;
+            top: 145px;
+            right: 1px;
+            height: 273px;
+        }
+        #dancedGif{
+            position: absolute;
+            top: 0;
+            height: 150px;
+        }#dancedGif2{
+             position: absolute;
+             top: 0;
+             right: 1px;
+             height: 150px;
+         }
+        #dancedGif3{
+            position: absolute;
+            top: 270px;
+            left: 300px;
+            height: 150px;
+        }
+        #dancedGif4{
+            position: absolute;
+            top: 270px;
+            right: 300px;
+            height: 150px;
+        }
+        #lastdancedGif1{
+            position: absolute;
+            left: 20px;
+        }
+        #lastdancedGif2{
+            position: absolute;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p class="code">
+    <span>&uarr;</span>
+    <span>&uarr;</span>
+    <span>&darr;</span>
+    <span>&darr;</span>
+    <span class="hideFirst">&larr;</span>
+    <span class="hideFirst">&rarr;</span>
+    <span class="hideSecond">&larr;</span>
+    <span class="hideSecond">&rarr;</span>
+    <span class="hideThird">B</span>
+    <span class="hideThird">A</span>
+</p>
+<div class="congratMsg">Congratulation You did it</div>
+<div class="lostMsg"></div>
+<img src="img/giphy.gif" class="gifCongrat">
+<img src="img/kirmit.gif" class="gifCongrat" id="kermitGif">
+<img src="img/f39aba66e8098375d76d2cbbb6a61479.gif" class="gifCongrat" id="smithGif">
+<img src="img/happydance.gif" class="gifCongrat" id="dancedGif">
+<img src="img/happydance.gif" class="gifCongrat" id="dancedGif2">
+<img src="img/happydance.gif" class="gifCongrat" id="dancedGif3">
+<img src="img/happydance.gif" class="gifCongrat" id="dancedGif4">
+<img src="img/1508793518_miodjet.gif" class="gifCongrat" id="secondGif">
+<img src="img/200.gif" class="gifCongrat" id="lastdancedGif1">
+<img src="img/200.gif" class="gifCongrat" id="lastdancedGif2">
+
+
+<script src="js/jquery-2.2.4.min.js"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function() {
+        "use strict";
+
+        $(document).on( 'keydown', function (e) {
+                console.log(e);
+            }
+
+        )
+
+
+        $('.congratMsg').hide();
+        $('.lostMsg').toggle();
+        $('.hideFirst').hide();
+        $('.hideSecond').hide();
+        $('.hideThird').hide();
+        $('.gifCongrat').hide();
+
+
+        var keys = [],chance = 4 , konami = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+
+        $(document).on("keydown", function (e) {
+            keys.push(e.originalEvent.key);
+
+            if (keys.length === 10 && keys.toString() !== konami.toString() ) {
+                --chance
+                $('.lostMsg').show().html('Sorry try AGAIN '+chance);
+                // $('.lostMsg').append();
+                keys = [];
+                if (chance === 3){
+                    $('.hideFirst').show();
+
+                }else if (chance === 2){
+                    $('.hideSecond').show();
+
+                } else if (chance === 1){
+                    $('.hideThird').show();
+
+                }else if (chance === 0){
+                    $('h1').html('GAME OVER').css('font-size' , '200px')
+                    $('.lostMsg').toggle();
+                    $('span').toggle();
+
+                }
+            }
+            if (keys.toString() === konami.toString()) {
+                $('.congratMsg , .hideFirst , .hideSecond , .hideThird , .gifCongrat').show(); //show effect dont forget
+                $('.lostMsg').toggle();
+                keys = [];
+            }
+
+        });
+    });
+
+
+
+
+
+</script>
+</body>
+</html>
