@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script src="js/jquery-2.2.4.min.js"></script>
+
+<script>
+    (function() {
+        "use strict";
+
+        // function updateImoj(){
+            var ajazRequestImoj = $.ajax("https://api.github.com/emojis");
+            ajazRequestImoj.done(function (data , s , j) {
+                var newData = data.toArray();
+                console.log(newData);
+                // buildHTMLImoj(data)
+            })
+        // }
+
+        fetch('https://fetchapi-img.glitch.me/emojis.json')
+            .then( response => response.json() )
+    .then( res => {
+            for (let property in res) {
+            if (!res.hasOwnProperty(property)) continue;
+
+            document.write(`<img src="${res[property]}">`)
+            // Do stuff...
+        }
+    } )
+        // function buildHtmlImoj(imojis){
+        //     var imojiHtml = '';
+        //     imojis.forEach(function (imoji) {
+        //
+        //     })
+        //
+        // }
+
+    })();
+</script>
+
+</body>
+</html>

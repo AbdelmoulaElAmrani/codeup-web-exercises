@@ -10,10 +10,70 @@
         .invisible{
             display: none;
         }
+        ul{
+            list-style: none;
+        }
+        .container{
+            margin-bottom: 50px;
+        }
+        .imgBox1{
+            height: 200px;
+            width: 160px;
+            border: #1B87E5 solid 1px;
+            display: inline-block;
+            background-image: url("img/icebergart.jpg");
+            background-size: cover;
+        }
+        .imgBox2{
+            height: 200px;
+            width: 160px;
+            border: #1B87E5 solid 1px;
+            display: inline-block;
+            background-image: url("img/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg");
+            background-size: cover;
+
+
+        }
+        .imgBox3{
+            height: 200px;
+            width: 160px;
+            border: #1B87E5 solid 1px;
+            display: inline-block;
+            background-image: url("img/scream.jpg");
+            background-size: cover;
+
+        }
+        button{
+            position: relative;
+            top: 20px;
+            right: 100px;
+        }
+        img{
+            height: 200px;
+            width: 160px;
+        }
+
     </style>
 </head>
 <body>
 <h1>8 Facts About the Grand Canyon You Never Knew</h1>
+<div class="container">
+<div class="imgBox1" id="boxId1">
+
+</div>
+<button class="btn1" id="leftSwapBtn"> ooo </button>
+<div class="imgBox2" id="boxId2">
+
+</div>
+<button id="middleSwapBtn" class="btn2"> ooo </button>
+<div class="imgBox3" id="boxId3">
+
+</div>
+<button class="bnt3" id="rightSwapBtn"> ooo </button>
+
+</div>
+
+
     <DL>
         <DT><STRONG>WE DON'T REALLY KNOW HOW OLD IT IS</STRONG>
         <DD class="invisible">It has long been believed that the Colorado River began carving the Grand Canyon
@@ -53,13 +113,75 @@
             they won't get hurt (not a guarantee).
     </DL>
 
+    <h3>State Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+
+    <h3>State Parks of NY</h3>
+    <ul id="state-parks-ny">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+    </ul>
+<button class="ylBackg">List background</button>
 <script src="js/jquery-2.2.4.min.js"></script>
 <script>
     $(document).ready(function() {
 
         $('DT').click(function() {
+
             $(this).next("DD").toggleClass('invisible');
         });
+        
+        $('.ylBackg').click( function(){
+        $('ul').each(function () {
+            $(this).children().last().css('background', 'yellow')
+        })
+        });
+        
+        $('h3').click(function () {
+            console.log('ll');
+            $(this).next().children().css('font-weight', 'bold')
+        });
+
+        $('li').click(function () {
+            $(this).parent().children().first().css('color', 'blue')
+        });
+
+        $('#leftSwapBtn').click(function() {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).next().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).next().attr("class", "frame " + oldClass)
+        });
+        $('#middleSwapBtn').click(function() {
+            var choice = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+            var frameChoice = (choice) ? $(this).parent().prev() : $(this).parent().next();
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = frameChoice.children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            frameChoice.children().first().attr("class", "frame " + oldClass)
+        });
+        $('#rightSwapBtn').click(function() {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().prev().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().prev().children().first().attr("class", "frame " + oldClass)
+        });
+
+
 
     });
 </script>

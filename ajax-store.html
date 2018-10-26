@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button id="update">Update w/Ajax</button>
+<button id="showImoj">show imoj</button>
+
+
+
+<script src="js/jquery-2.2.4.min.js"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+    // TODO: Take the data from inventory.json and append it to the products table
+
+    function updatePage() {
+        var ajaxRequest = $.ajax("./data/inventory.json");
+        ajaxRequest.done(function (data, status, jqXhr) {
+            buildHTML(data);
+        });
+        ajaxRequest.fail(function (jqXhr, status, error) {
+            alert('An error occured on your AJAX request!')
+            console.log(jqXhr); // jQuery XMLHttpRequest object
+            console.log(status);
+            console.log(error);
+        });
+    }
+    function buildHTML(orders) {
+        var ordersHTML = "";
+        orders.forEach(function (order) {
+            ordersHTML += "<tr>";
+            ordersHTML += "<td>" + order.title + "</td>";
+            ordersHTML += "<td>" + order.quantity + "</td>";
+            ordersHTML += "<td> $" + order.price + "</td>";
+//                ordersHTML += "<td>" + order.categories + "</td>"; //puts categories on 1 line
+//                      or
+//              build categories column - puts categories on separate lines
+            ordersHTML += "<td>";
+            order.categories.forEach(function (category) {
+                ordersHTML += category + "<br/>";
+            });
+            ordersHTML += "</td>";
+            ordersHTML += "</tr>";
+        });
+        $('#insertProducts').html(ordersHTML);
+    }
+
+    $('#update').click(updatePage);
+
+
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+</body>
+</html>
